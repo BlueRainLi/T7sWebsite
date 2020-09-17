@@ -1,0 +1,60 @@
+div.search_box{
+    margin: 0.5rem 0.5rem 1rem 0.5rem;
+    border-radius: 0.5rem;
+    border-color: blue;
+    box-shadow: 0 0 0 1.5px blue inset;
+
+}
+
+div.search_form{
+    padding: 0.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+}
+
+div.search_title{
+    width: 100%;
+    height: 1.5rem;
+    margin-left: 0;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei UI", cursive;
+    font-weight: bold;
+    background-color: blue;
+    color: lightcyan;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+div.form_group{
+    align-items: center;
+    width: auto;
+    margin: 0.3rem 0.5rem;
+}
+
+option{
+    text-align: center;
+}
+
+label{
+    font-size: 1.2rem;
+    font-family: Arial,serif;
+}
+
+select.select_item{
+    width: auto;
+    border: 1px solid;
+    border-radius: 0.5rem 0.5rem;
+    height: 1.5rem;
+    text-align: center;
+    outline-color: aqua;
+}
+
+select.select_item:focus{
+    border-color: aqua;
+}
+
+th{
+    padding: 0.25rem 0.25rem 0.25rem 0.75rem
+}

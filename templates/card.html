@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/css/card.css">
+{% endblock %}
+
+{% block content %}
+<div class="search_box">
+    <div class="search_title">搜索条件</div>
+    <div class="search_form">
+        {% for i in select_list.keys() %}
+        <div class="form_group">
+            <label>{{ i }}</label>
+            <label>
+                <select class="select_item">
+                    <option value>-</option>
+                    {% for item in select_list[i] %}
+                    <option value={{ item[0] }}>{{ item[1] }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{#{% if show_block == TRUE %}#}
+<div class="search_box" style="border-color: brown;box-shadow: 0 0 0 1.5px brown inset">
+    <div class="search_title", style="background-color: brown">搜索结果</div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Card</th>
+            <th scope="col">Card name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in range(length(block_data)) %}
+            
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{#{% endif %}#}
+
+<div class="search_box" style="border-color: aquamarine;box-shadow: 0 0 0 1.5px aquamarine inset">
+    <div class="search_title" style="background-color: aquamarine;">  注意事项</div>
+    <div class="search_form">
+        content
+    </div>
+</div>
+{% endblock %}
