@@ -33,9 +33,10 @@
         <table>
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Card name</th>
-                <th scope="col">Character name</th>
+                <th scope="col">序号</th>
+                <th scope="col">稀有度</th>
+                <th scope="col">卡片标题</th>
+                <th scope="col">角色</th>
             </tr>
             </thead>
             <tbody>
@@ -43,8 +44,9 @@
             {% for i in range(block_data | length) %}
             <tr>
                 <th>{{ block_data[i][0] }}</th>
+                <th>{{ select_list["rarity_id"][-1+block_data[i][3]|int][1] }}</th>
                 <th>{{ block_data[i][1] }}</th>
-                <th>{{ select_list["character_id"][block_data[i][2]|int][1] }}</th>
+                <th>{{ select_list["character_id"][-1+block_data[i][2]|int][1] }}</th>
             </tr>
             {% endfor %}
             {% endif %}

@@ -65,7 +65,7 @@ def create_command (post:dict,select:str,table:str) -> str:
         if key == keys[-1]:
             Command += "' "
         else:
-            Command += "',"
+            Command += "' AND "
     Command += ";"
     return Command
 
