@@ -28,27 +28,30 @@
 
 {% if show_block == True %}
 <div class="search_box" style="border-color: brown;box-shadow: 0 0 0 1.5px brown inset">
-    <div class="search_title", style="background-color: brown">搜索结果</div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Card</th>
-            <th scope="col">Card name</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% if block_data != None %}
-        {% for i in range(block_data | length) %}
-        <tr>
-            <th>{{ block_data[i][0] }}</th>
-            <th>{{ block_data[i][1] }}</th>
-            <th>{{ block_data[i][2] }}</th>
-        </tr>
-        {% endfor %}
-        {% endif %}
-        </tbody>
-    </table>
+    <div class="search_title" style="background-color: brown">搜索结果</div>
+    <div class="table">
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Card name</th>
+                <th scope="col">Character name</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if block_data != None %}
+            {% for i in range(block_data | length) %}
+            <tr>
+                <th>{{ block_data[i][0] }}</th>
+                <th>{{ block_data[i][1] }}</th>
+                <th>{{ select_list["character_id"][block_data[i][2]|int][1] }}</th>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
 </div>
 {% endif %}
 

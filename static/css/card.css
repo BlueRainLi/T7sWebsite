@@ -58,3 +58,9 @@ select.select_item:focus{
 th{
     padding: 0.25rem 0.25rem 0.25rem 0.75rem
 }
+
+div.table{
+    height: 30rem;
+    width: 100%;
+    overflow: scroll;
+}

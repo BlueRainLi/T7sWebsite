@@ -23,7 +23,11 @@ def get_sql(sql_list:list, sql_url:str) -> None:
     current_path = os.getcwd()
     for item in sql_list:
         url = sql_url+item
-        sql_content = res.get(url).content
+        try:
+            sql_content = res.get(url).content
+        except:
+            print("Requests failed. The process has been end.")
+            return None
         with open(current_path+"/static/sql/"+item,'wb') as f:
             f.write(sql_content)
         print(item+" saved")
@@ -34,7 +38,11 @@ def version() -> list:
     Get the current version of Tokyo 7th Sister.
     :return: str
     '''
-    version_link = res.get("https://status.t7s.sagilio.net/info/version")
+    try:
+        version_link = res.get("https://status.t7s.sagilio.net/info/version")
+    except:
+        print("Api failed.")
+        return None
     ver = version_link.json()["gameVersion"]["version"]
     return ver
 
