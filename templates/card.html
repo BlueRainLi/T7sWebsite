@@ -9,9 +9,9 @@
     <div class="search_form">
         {% for i in select_list.keys() %}
         <div class="form_group">
-            <label>{{ i }}</label>
+            <label>{{ select_name_list[i] }}</label>
             <label>
-                <select class="select_item">
+                <select name={{ i }} class="select_item" form="submit">
                     <option value>-</option>
                     {% for item in select_list[i] %}
                     <option value={{ item[0] }}>{{ item[1] }}</option>
@@ -20,10 +20,13 @@
             </label>
         </div>
         {% endfor %}
+        <form action="/card/" id="submit" method="post">
+            <input type="submit" class="select_item" value="搜索">
+        </form>
     </div>
 </div>
 
-{#{% if show_block == TRUE %}#}
+{% if show_block == True %}
 <div class="search_box" style="border-color: brown;box-shadow: 0 0 0 1.5px brown inset">
     <div class="search_title", style="background-color: brown">搜索结果</div>
     <table class="table">
@@ -35,13 +38,19 @@
         </tr>
         </thead>
         <tbody>
-        {% for i in range(length(block_data)) %}
-            
+        {% if block_data != None %}
+        {% for i in range(block_data | length) %}
+        <tr>
+            <th>{{ block_data[i][0] }}</th>
+            <th>{{ block_data[i][1] }}</th>
+            <th>{{ block_data[i][2] }}</th>
+        </tr>
         {% endfor %}
+        {% endif %}
         </tbody>
     </table>
 </div>
-{#{% endif %}#}
+{% endif %}
 
 <div class="search_box" style="border-color: aquamarine;box-shadow: 0 0 0 1.5px aquamarine inset">
     <div class="search_title" style="background-color: aquamarine;">  注意事项</div>

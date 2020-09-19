@@ -42,7 +42,7 @@ label{
     font-family: Arial,serif;
 }
 
-select.select_item{
+.select_item{
     width: auto;
     border: 1px solid;
     border-radius: 0.5rem 0.5rem;

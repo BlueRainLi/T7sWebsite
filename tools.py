@@ -49,6 +49,10 @@ def create_command (post:dict,select:str,table:str) -> str:
         Command += " WHERE "
     keys = list(post.keys())
     for key in keys:
+        if post[key] == "":
+            del post[key]
+    keys = list(post.keys())
+    for key in keys:
         Command += key+"="+"'"+str(post[key])
         if key == keys[-1]:
             Command += "' "
@@ -63,7 +67,7 @@ def select(db:str, operation:str) -> list:
     :rtype: object
     :param db: path of the database
     :param operation: the string of the operation
-    :return: dict
+    :return: list
     '''
     address = os.getcwd()
     db = address+db
